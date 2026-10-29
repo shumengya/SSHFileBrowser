@@ -1,0 +1,85 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 60px 24px;
+  overflow: auto;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 8px 0 28px;
+  color: var(--text-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  text-align: left;
+  transition: border-color 0.1s, box-shadow 0.1s;
+}
+
+.card:hover {
+  border-color: var(--select-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cardText strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardText span {
+  color: var(--text-3);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.addCard {
+  border-style: dashed;
+}
+
+.addCard .cardIcon {
+  background: #f1f1f1;
+  color: var(--text-2);
+}

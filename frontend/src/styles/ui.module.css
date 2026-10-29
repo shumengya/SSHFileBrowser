@@ -1,0 +1,168 @@
+/* 各处共用的按钮、输入框、表单样式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  background: #fff;
+  white-space: nowrap;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.btn:hover:not(:disabled) {
+  background: #f6f6f6;
+}
+
+.btn:active:not(:disabled) {
+  background: #efefef;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.primary {
+  composes: btn;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.primary:active:not(:disabled) {
+  background: #004f94;
+}
+
+.danger {
+  composes: btn;
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+}
+
+.danger:hover:not(:disabled) {
+  background: #a82417;
+}
+
+.input {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border-strong);
+  border-bottom-color: #9a9a9a;
+  border-radius: 4px;
+  background: #fff;
+  outline: none;
+}
+
+.input:focus {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+.input::placeholder {
+  color: var(--text-3);
+}
+
+.textarea {
+  composes: input;
+  height: auto;
+  min-height: 120px;
+  padding: 8px 10px;
+  resize: vertical;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.label {
+  color: var(--text-2);
+  font-size: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.row > .field {
+  flex: 1;
+}
+
+.hint {
+  color: var(--text-3);
+  font-size: 12px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.check input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.segmented button {
+  height: 30px;
+  padding: 0 14px;
+  border: none;
+  background: #fff;
+}
+
+.segmented button + button {
+  border-left: 1px solid var(--border-strong);
+}
+
+.segmented .on {
+  background: var(--accent);
+  color: #fff;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #c8d9ea;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

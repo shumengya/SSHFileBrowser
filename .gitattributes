@@ -1,0 +1,4 @@
+* text=auto
+# cmd 遇到 LF 换行加中文会解析错乱,批处理必须是 CRLF
+*.cmd text eol=crlf
+*.bat text eol=crlf

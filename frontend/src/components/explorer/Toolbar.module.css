@@ -1,0 +1,173 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 46px;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+  flex-shrink: 0;
+}
+
+.navButton {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.navButton:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.navButton:disabled {
+  color: #c2c2c2;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  height: 32px;
+  margin: 0 6px;
+  padding: 0 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  background: #fff;
+  cursor: text;
+}
+
+.address:focus-within {
+  border-color: var(--accent);
+  box-shadow: inset 0 -1px 0 var(--accent);
+}
+
+.addressIcon {
+  margin-right: 4px;
+  color: var(--text-2);
+}
+
+.addressInput {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+
+/* 路径太长时保留最右边(当前目录),左边被裁掉 */
+.crumbs {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.crumbs::after {
+  content: '';
+  flex: 1 0 20px;
+}
+
+.crumbWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.crumb {
+  height: 24px;
+  padding: 0 6px;
+  border: none;
+  border-radius: 3px;
+  background: none;
+  white-space: nowrap;
+}
+
+.crumb:hover {
+  background: #eef2f6;
+}
+
+.crumbSep {
+  color: var(--text-3);
+}
+
+.searchCrumb {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 240px;
+  height: 32px;
+  margin-left: 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.search:focus-within {
+  border-color: var(--accent);
+  box-shadow: inset 0 -1px 0 var(--accent);
+}
+
+.searchIcon {
+  margin: 0 6px 0 10px;
+  color: var(--text-2);
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.searchSpinner {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  border: 2px solid #c8d9ea;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.searchClear {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  border: none;
+  border-radius: 3px;
+  background: none;
+  color: var(--text-2);
+}
+
+.searchClear:hover {
+  background: #eee;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

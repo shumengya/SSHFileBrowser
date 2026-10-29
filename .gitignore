@@ -1,0 +1,8 @@
+# 构建产物
+bin/
+backend/web/dist/
+frontend/node_modules/
+
+# 运行数据:数据库、加密密钥(secret.key 泄露等于服务器密码泄露)
+data/
+backend/data/

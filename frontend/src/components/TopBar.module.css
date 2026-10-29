@@ -1,0 +1,170 @@
+.bar {
+  display: flex;
+  align-items: flex-end;
+  height: 42px;
+  padding: 0 8px 0 12px;
+  background: var(--chrome);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding-right: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.brand span {
+  color: var(--text);
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding-top: 6px;
+  overflow: hidden;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 220px;
+  min-width: 90px;
+  height: 36px;
+  padding: 0 6px 0 12px;
+  border-radius: 8px 8px 0 0;
+  color: var(--text-2);
+  cursor: default;
+}
+
+.tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 选中的标签页和下面的工具栏连成一片 */
+.active {
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 0 0 1px var(--border);
+  clip-path: inset(-2px -2px 0 -2px);
+}
+
+.tab + .tab:not(.active)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: #c9ced6;
+}
+
+.active + .tab::before,
+.tab:hover::before {
+  display: none;
+}
+
+.tabTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tabClose {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: var(--text-2);
+  opacity: 0;
+}
+
+.tab:hover .tabClose,
+.active .tabClose {
+  opacity: 1;
+}
+
+.tabClose:hover {
+  background: #dfe3e8;
+}
+
+.add {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0 0 3px 4px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: var(--text-2);
+  flex-shrink: 0;
+}
+
+.add:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  padding-left: 8px;
+}
+
+.action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: var(--text-2);
+}
+
+.action:hover,
+.actionOn {
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--text);
+}
+
+.username {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+}
