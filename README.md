@@ -1,5 +1,7 @@
 # SSH 文件管理器
 
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 通过 SSH / SFTP 在浏览器里管理远程 Linux 服务器上的文件。操作方式照着 Windows 资源管理器和宝塔面板的文件管理来做:标签页、地址栏、右键菜单、框选、拖放、快捷键都是熟悉的样子。
 
 前端打包进 Go 二进制,**一个 exe,双击就能用**,不需要装数据库,也不需要在服务器上装任何东西,只要服务器能 SSH 登录。
@@ -247,3 +249,9 @@ build.cmd                一键构建
 **压缩、解压按钮是灰的?** 服务器上没有对应命令,装上即可,例如 `apt install zip unzip` 或 `yum install zip unzip`。连接会缓存一段时间,装好后重启本程序才会重新检测。
 
 **换电脑后服务器列表还在吗?** 把整个 `data` 目录(包括 `secret.key`)和 exe 一起拷过去就行。
+
+## 开源协议
+
+本项目基于 [Apache License 2.0](LICENSE) 开源,Copyright 2026 shumengya。
+
+简单说:你可以自由使用、修改、分发甚至商用,但需要保留版权声明和协议文本,修改过的文件要注明;协议同时附带专利授权和免责声明。
